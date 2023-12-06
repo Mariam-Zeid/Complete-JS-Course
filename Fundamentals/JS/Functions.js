@@ -51,3 +51,24 @@ const calcAge2 = function (birthyear) {
 };
 const age2 = calcAge2(1991);
 console.log(age2);
+
+
+// ?==================== Arrow Function ====================?
+
+/**
+ * ! special form of Function Expressions
+ * * we used if the return value happens implicilty
+*/
+
+const calcAge3 = (birthYear) => 2023 - birthYear;
+const age3 = calcAge3(2006);
+console.log(age3);
+
+// Example with 2 Arguments
+const yearsUntilRetirement = (name, birthYear) => {
+  const age = 2023 - birthYear;
+  const retirement = 65 - age;
+  return `${name} retires in ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement("Jonas", 1991));

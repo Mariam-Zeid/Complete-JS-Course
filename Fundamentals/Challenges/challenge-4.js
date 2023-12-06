@@ -6,10 +6,7 @@
  */
 
 // ? arrow function calculates the average 3 scores
-const calcAverage = (score1, score2, score3) => {
-  avg = (score1 + score2 + score3) / 3;
-  return avg;
-};
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3
 
 // ? function expression determine the winner for both 
 const checkWinner = function (avgDolphins, avgKoalas) {

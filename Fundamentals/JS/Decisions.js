@@ -1,6 +1,6 @@
 // ?==================== If Else Statement ====================?
 
-const age = 15;
+let age = 15;
 
 if (age >= 18) {
   console.log("Sarah can start driving license 🚗");
@@ -18,6 +18,15 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(`Sarah was born in the ${century}st century.`);
+
+// ?==================== Ternary Operator ====================?
+age = 18; // Overrides the previous value.
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink);
+
+// OR
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
+
 
 // ?==================== Switch Case ====================?
 

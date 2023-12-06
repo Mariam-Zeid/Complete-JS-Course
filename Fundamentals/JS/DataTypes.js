@@ -43,3 +43,20 @@ console.log(jonasNew);
 console.log(`string text line 1
 string text line 2
 string text line 3`);
+
+
+/**
+  * ! Type Conversion
+  * * convert a value into another data type with methods
+*/
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear); // Number , String
+
+
+/**
+  * ! Type Coercion (implicit)
+  * * automatic conversion 
+*/
+console.log("I'm " + 23 + ' years old');
+console.log('23' - '10' - 3); // 10
+

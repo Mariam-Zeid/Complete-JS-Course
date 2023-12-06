@@ -26,3 +26,20 @@ console.log(`type of year is : ${typeof year}`); // undefined (type)
 // ? showing the type of the null value
 
 console.log(`type of null is : ${typeof null}`); // object
+
+// ? String and Template Literal
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const now = 2023;
+
+const jonas =
+  "I'm " + firstName + ", a " + (now - birthYear) + " years old " + job + "!";
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${now - birthYear} years old ${job}!`;
+console.log(jonasNew);
+
+console.log(`string text line 1
+string text line 2
+string text line 3`);

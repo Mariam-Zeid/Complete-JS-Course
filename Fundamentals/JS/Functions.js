@@ -3,7 +3,7 @@
 /**
  * ! can be invoked before they are defined (Hoisting)
  * * default value is Undefined for (parammeters, return)
- */
+*/
 
 function calcSum1(x, y, z) {
   var sum = x + y + z;
@@ -39,3 +39,15 @@ function calcAge1(birthyear) {
 
 const age1 = calcAge1(2002);
 console.log(age1);
+
+// ?==================== Function Expression ====================?
+
+/**
+ * ! can't be access before initialization (Hoisting)
+*/
+
+const calcAge2 = function (birthyear) {
+  return 2023 - birthyear;
+};
+const age2 = calcAge2(1991);
+console.log(age2);

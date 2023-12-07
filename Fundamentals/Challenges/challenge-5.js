@@ -1,4 +1,4 @@
-// ?==================== Challenge 1 ====================?
+// ?==================== Challenge 5 ====================?
 /**
  * * building the same tip calculator, using the same rules as before:
  * * Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%

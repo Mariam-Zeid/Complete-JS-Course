@@ -1,4 +1,4 @@
-// ?==================== Challenge 3 ====================?
+// ?==================== Challenge 4 ====================?
 /**
  * * There are two gymnastics teams, Dolphins and Koalas. They compete against each other
  * * Each team competes 3 times, and then the average of the 3 scores is calculated (so one average score per team)

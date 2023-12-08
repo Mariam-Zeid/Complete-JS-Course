@@ -7,7 +7,7 @@
 
   <!-- ?================ Bootstrap CSS File ================ -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
+  
   <title>Simple CRUD System</title>
 </head>
 
@@ -24,7 +24,8 @@
       </div>
       <div class="mb-3">
         <label for="productCategory">product Category</label>
-        <select id="productCategory" class="form-select mt-2">
+        <select id="productCategory" class="form-select mt-2 text-muted">
+          <option disabled selected >Select Category</option>
           <option value="tv">tv</option>
           <option value="mobile">mobile</option>
           <option value="Laptop">Laptop</option>
@@ -38,7 +39,7 @@
         <label for="productDescription">product Description</label>
         <textarea id="productDescription" class="form-control mt-2"></textarea>
       </div>
-      <button type="button" onclick="addProduct()" class="btn btn-outline-info">Add Product</button>
+      <button type="button" id="addProduct" class="btn btn-outline-info">Add Product</button>
       <button type="button" class="btn btn-outline-danger">clear Form</button>
     </form>
     <input type="text" class="form-control w-50 mx-auto my-5" placeholder="Search......" name="" id="searchInput">
@@ -53,24 +54,13 @@
         <th>Update </th>
         <th>Delete</th>
       </thead>
-      <tbody id="data">
-        <tr>
-          <td>0</td>
-          <td>Iphone</td>
-          <td>70000</td>
-          <td>Mobile</td>
-          <td>Sale</td>
-          <td>Goood</td>
-          <td>
-            <button class="btn btn-warning">update</button>
-          </td>
-          <td>
-            <button class="btn btn-danger">delete</button>
-          </td>
-        </tr>
+      <tbody id="tableData">
       </tbody>
     </table>
   </div>
+
+  <!-- ?================ JS File ================ -->
+  <script src="js/script.js"></script>
 </body>
 
 </html>

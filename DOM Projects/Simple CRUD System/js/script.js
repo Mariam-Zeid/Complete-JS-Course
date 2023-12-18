@@ -8,10 +8,20 @@ const addProductBtn = document.getElementById("addProduct");
 const clearFormBtn = document.getElementById("clearForm");
 
 // ? Products Array
-let productsArr = [];
+let productsArr;
+
+if (localStorage.getItem("productslist") != null) {
+  // ? Retrieving all the data saved earlier.
+  productsArr = JSON.parse(localStorage.getItem("productslist"));
+  displayData();
+}
+else {
+  // ? Start from the beginning
+  productsArr = [];
+}
 
 // ? Display Data
-const displayData = function () {
+function displayData () {
   let temp = "";
   for (let i = 0; i < productsArr.length; i++) {
     temp += `<tr>
@@ -48,6 +58,9 @@ addProductBtn.addEventListener("click", function () {
 
   // ? Display Object Properties in the table
   displayData();
+
+  // ? Storing all information in the local storage. (kol mara ha set object gded)
+  localStorage.setItem("productslist", JSON.stringify(productsArr));
 });
 
 // ? clearing the inputs
@@ -60,10 +73,13 @@ clearFormBtn.addEventListener("click", function () {
 });
 
 // ? Deleting product from the array
-function deleteProductBtn (deletedIndex){
+function deleteProductBtn(deletedIndex) {
   // ? Removing Product Object from Products Array (hasehl index mo3ayn kol mara)
   productsArr.splice(deletedIndex, 1);
 
   // ? Display the remaining Objects Properties in the table
   displayData();
+
+  // ? Storing all the new information in the local storage. (kol mara hams7 object ha set mn gded)
+  localStorage.setItem("productslist", JSON.stringify(productsArr));
 }

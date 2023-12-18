@@ -25,7 +25,7 @@ const displayData = function () {
             <button class="btn btn-warning">update</button>
           </td>
           <td>
-            <button class="btn btn-danger">delete</button>
+            <button onclick='deleteProductBtn(${i})' class="btn btn-danger">delete</button>
           </td>
         </tr>`;
   }
@@ -58,3 +58,12 @@ clearFormBtn.addEventListener("click", function () {
   productSaleInput.checked = false;
   productDescriptionInput.value = "";
 });
+
+// ? Deleting product from the array
+function deleteProductBtn (deletedIndex){
+  // ? Removing Product Object from Products Array (hasehl index mo3ayn kol mara)
+  productsArr.splice(deletedIndex, 1);
+
+  // ? Display the remaining Objects Properties in the table
+  displayData();
+}

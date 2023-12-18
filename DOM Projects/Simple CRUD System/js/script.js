@@ -7,6 +7,8 @@ const productDescriptionInput = document.getElementById("productDescription");
 const addProductBtn = document.getElementById("addProduct");
 const clearFormBtn = document.getElementById("clearForm");
 
+const searchInput = document.getElementById("search");
+
 // ? Products Array
 let productsArr;
 
@@ -14,14 +16,13 @@ if (localStorage.getItem("productslist") != null) {
   // ? Retrieving all the data saved earlier.
   productsArr = JSON.parse(localStorage.getItem("productslist"));
   displayData();
-}
-else {
+} else {
   // ? Start from the beginning
   productsArr = [];
 }
 
 // ? Display Data
-function displayData () {
+function displayData() {
   let temp = "";
   for (let i = 0; i < productsArr.length; i++) {
     temp += `<tr>
@@ -40,7 +41,7 @@ function displayData () {
         </tr>`;
   }
   document.getElementById("tableData").innerHTML = temp;
-};
+}
 
 // ? Adding product to the array
 addProductBtn.addEventListener("click", function () {
@@ -83,3 +84,31 @@ function deleteProductBtn(deletedIndex) {
   // ? Storing all the new information in the local storage. (kol mara hams7 object ha set mn gded)
   localStorage.setItem("productslist", JSON.stringify(productsArr));
 }
+
+// ? Searching for specific product name or category
+searchInput.addEventListener("keyup", function () {
+  let searchVal = searchInput.value.toLowerCase();
+
+  let searchResult = "";
+  for (let i = 0; i < productsArr.length; i++) {
+    if (
+      productsArr[i].productName.toLowerCase().includes(searchVal) == true ||
+      productsArr[i].productCategory.toLowerCase().includes(searchVal)
+    )
+      searchResult += `<tr>
+          <td>${i}</td>
+          <td>${productsArr[i].productName.toLowerCase().replace(searchVal, `<span class='bg-info'>${searchVal}</span>`)}</td>
+          <td>${productsArr[i].productPrice}</td>
+          <td>${productsArr[i].productCategory.toLowerCase().replace(searchVal, `<span class='bg-info'>${searchVal}</span>`)}</td>
+          <td>${productsArr[i].productSale}</td>
+          <td>${productsArr[i].productDescription}</td>
+          <td>
+            <button class="btn btn-warning">update</button>
+          </td>
+          <td>
+            <button onclick='deleteProductBtn(${i})' class="btn btn-danger">delete</button>
+          </td>
+        </tr>`;
+  }
+  document.getElementById("tableData").innerHTML = searchResult;
+});
